@@ -52,43 +52,29 @@ VALUES (1, 1, TRUE),
 
 
 -- Insertar datos en la tabla Reserva
-INSERT INTO Reserva (IdReserva, DNI_Cliente, IdHabitacion, Fecha_Reserva, Fecha_Inicio, Fecha_Fin)
-VALUES (1, 1001, 1, '2024-01-05', '2024-01-10', '2024-01-12'),
-       (2, 1002, 2,  '2024-02-10', '2024-02-15', '2024-02-20'),
-       (3, 1003, 3,  '2024-03-15', '2024-03-20', '2024-03-25'),
-       (4, 1004, 4,  '2024-04-20', '2024-04-25', '2024-04-30'),
-       (5, 1005, 5, '2024-05-25', '2024-05-30', '2024-06-05'),
-       (6, 1006, 6, '2024-06-01', '2024-06-05', '2024-06-10'),
-       (7, 1007, 7, '2024-07-05', '2024-07-10', '2024-07-15'),
-       (8, 1008, 8, '2024-08-10', '2024-08-15', '2024-08-20'),
-       (9, 1009, 9, '2024-09-15', '2024-09-20', '2024-09-25'),
-       (10, 1010, 10, '2024-10-10', '2024-10-25', '2024-10-30');
+-- INSERT INTO Reserva (IdReserva, DNI_Cliente, IdHabitacion, Fecha_Reserva, Fecha_Inicio, Fecha_Fin)
+-- VALUES (1, 1001, 1, '2024-01-05', '2024-01-10', '2024-01-12'),
+--        (2, 1002, 2,  '2024-02-10', '2024-02-15', '2024-02-20'),
+--        (3, 1003, 3,  '2024-03-15', '2024-03-20', '2024-03-25'),
+--        (4, 1004, 4,  '2024-04-20', '2024-04-25', '2024-04-30'),
+--        (5, 1005, 5, '2024-05-25', '2024-05-30', '2024-06-05'),
+--        (6, 1006, 6, '2024-06-01', '2024-06-05', '2024-06-10'),
+--        (7, 1007, 7, '2024-07-05', '2024-07-10', '2024-07-15'),
+--        (8, 1008, 8, '2024-08-10', '2024-08-15', '2024-08-20'),
+--        (9, 1009, 9, '2024-09-15', '2024-09-20', '2024-09-25'),
+--        (10, 1010, 10, '2024-10-10', '2024-10-25', '2024-10-30');
 
--- Insertar datos en la tabla Servicio
-INSERT INTO Servicio (IdServicio, Descripcion, Precio)
-VALUES (1, 'Desayuno', 15.00),
-       (2, 'Almuerzo', 25.00),
-       (3, 'Cena', 30.00),
-       (4, 'Lavandería', 10.00),
-       (5, 'Spa', 50.00),
-       (6, 'Transporte', 20.00),
-       (7, 'WiFi', 5.00),
-       (8, 'Aseo habitación', 35.00),
-       (9, 'Gimnasio', 20.00),
-       (10, 'Piscina', 40.00);
+CALL InsertarReserva(1001, 1, '2024-01-05', '2024-01-10', '2024-01-12');
+CALL InsertarReserva(1002, 2, '2024-02-10', '2024-02-15', '2024-02-20');
+CALL InsertarReserva(1003, 3, '2024-03-15', '2024-03-20', '2024-03-25');
+CALL InsertarReserva(1004, 4, '2024-04-20', '2024-04-25', '2024-04-30');
+CALL InsertarReserva(1005, 5, '2024-05-25', '2024-05-30', '2024-06-05');
+CALL InsertarReserva(1006, 6, '2024-06-01', '2024-06-05', '2024-06-10');
+CALL InsertarReserva(1007, 7, '2024-07-05', '2024-07-10', '2024-07-15');
+CALL InsertarReserva(1008, 8, '2024-08-10', '2024-08-15', '2024-08-20');
+CALL InsertarReserva(1009, 9, '2024-09-15', '2024-09-20', '2024-09-25');
+CALL InsertarReserva(1010, 10, '2024-10-10', '2024-10-25', '2024-10-30');
 
--- Insertar datos en la tabla Reserva_Servicio
-INSERT INTO Reserva_Servicio (IdReserva, IdServicio)
-VALUES (1, 1),
-       (1, 2),
-       (2, 3),
-       (3, 4),
-       (4, 5),
-       (5, 6),
-       (6, 7),
-       (7, 8),
-       (8, 9),
-       (9, 10);
 
 -- Insertar datos en la tabla Departamento
 INSERT INTO Departamento (IdDepartamento, Nombre)
@@ -115,3 +101,30 @@ VALUES (1, 1, 101, 'Juan', 'Perez'),
        (8, 8, 108, 'Miguel', 'Fernandez'),
        (9, 9, 109, 'Laura', 'Rodriguez'),
        (10, 10, 110, 'Jorge', 'Torres');
+
+-- Insertar datos en la tabla Servicio
+INSERT INTO Servicio (IdServicio, Descripcion, Precio, IdEmpleado)
+VALUES (1, 'Desayuno', 15.00, 4),
+       (2, 'Almuerzo', 25.00 ,4),
+       (3, 'Cena', 30.00, 4),
+       (4, 'Lavandería', 10.00, 3),
+       (5, 'Spa', 50.00 ,7),
+       (6, 'Transporte', 20.00 ,5),
+       (7, 'WiFi', 5.00 ,6),
+       (8, 'Aseo habitación', 35.00 ,3),
+       (9, 'Gimnasio', 20.00 ,8),
+       (10, 'Piscina', 40.00 ,6);
+
+-- Insertar datos en la tabla Reserva_Servicio
+INSERT INTO Reserva_Servicio (IdReserva, IdServicio)
+VALUES (1, 1),
+       (1, 2),
+       (2, 3),
+       (3, 4),
+       (4, 5),
+       (5, 6),
+       (6, 7),
+       (7, 8),
+       (8, 9),
+       (9, 10);
+

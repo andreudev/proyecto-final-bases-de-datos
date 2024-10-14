@@ -44,6 +44,6 @@ Este archivo define un trigger que se ejecuta después de insertar un registro e
 ## Cómo Usar Este Proyecto
 
 1. **Crear la Base de Datos**: Ejecutar el script `PROYECTO_FINAL.SQL` para crear la estructura de la base de datos.
-2. **Insertar Datos Iniciales**: Ejecutar el script `INSERTS_PROYECTO_FINAL.SQL` para insertar datos de ejemplo.
-3. **Ejecutar Procedimientos y Triggers**: Ejecutar los scripts `PROCEDIMIENTO.SQL` y `TRIGGER_PROYECTOFINAL.SQL` para habilitar los procedimientos almacenados y triggers.
+2. **Ejecutar Procedimientos y Triggers**: Ejecutar los scripts `PROCEDIMIENTO.SQL` y `TRIGGER_PROYECTOFINAL.SQL` para habilitar los procedimientos almacenados y triggers.
+3. **Insertar Datos Iniciales**: Ejecutar el script `INSERTS_PROYECTO_FINAL.SQL` para insertar datos de ejemplo.
 4. **Realizar Consultas**: Utilizar el script `CONSULTAS.SQL` para obtener información relevante del sistema.

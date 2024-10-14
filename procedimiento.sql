@@ -33,14 +33,3 @@ END //
 DELIMITER ;
 
 CALL InsertarReserva(1001, 1, '2024-10-10', '2024-10-15', '2024-10-20');
-
-SELECT *
-FROM reserva_servicio
-JOIN reserva r on reserva_servicio.IdReserva = r.IdReserva
-JOIN hotel_paraiso.servicio s on reserva_servicio.IdServicio = s.IdServicio
-WHERE Descripcion = 'Cena';
-
-SELECT *
-FROM cliente
-JOIN hotel_paraiso.telefono t on cliente.DNI = t.DNI_Cliente
-WHERE Tipo = 'Movil';
